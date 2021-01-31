@@ -1,0 +1,28 @@
+{
+  "name": "code",
+  "version": "1.0.0",
+  "description": "",
+  "main": "scripts.js",
+  "dependencies": {
+    "@google-cloud/firestore": "^4.8.1",
+    "@google-cloud/storage": "^5.7.2",
+    "axios": "^0.21.1",
+    "excel4node": "^1.7.2",
+    "exceljs": "^4.2.0",
+    "express": "^4.17.1",
+    "firebase-admin": "^9.4.2",
+    "image-size": "^0.9.3",
+    "js-yaml": "^4.0.0",
+    "lodash": "^4.17.20",
+    "node-hikvision-api": "0.0.2",
+    "nodemon": "^2.0.5",
+    "urllib": "^2.36.1",
+    "xml2js": "^0.4.23"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
