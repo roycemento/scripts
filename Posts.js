@@ -1,6 +1,7 @@
 const axios = require('axios');
 const _ = require('lodash');
 const apiServer = 'http://localhost:8080';
+const Trades = require('./trades.json');
 
 const RESOURCES = {
     GET_PROJECTS_BY_COMPANY: `${apiServer}/v1/projects`,
@@ -50,6 +51,33 @@ const removeCompanyTagFromAllPosts = async (companySource, companyToRemoveFromPo
     } catch (error) {
         console.log("TCL ~ file: Posts.js ~ line 29 ~ removeCompanyTagFromAllPosts ~ error", error)
     }
+}
+
+exports.changeTaskAssign = async (projectId, trade, assignTo) => {
+    const posts = (await axios.get(RESOURCES.GET_POSTS_BY_PROJECT + `?projectId=${projectId}`)).data;
+
+    let isTradeExist = _.get(Trades, [trade]);
+
+    if (isTradeExist && assignTo) {
+        let postsByTrade = _.values(posts).filter(post => _.get(post, ["trade", "id"]) === trade);
+
+        for (let post of postsByTrade) {
+            if (post && post.id) {
+                let updatedAssignTo = { id: assignTo };
+
+                const data = { ...post, assignTo: updatedAssignTo };
+
+                try {
+                    await axios.patch(RESOURCES.PATCH_POST + `/${post.id}` + `?projectId=${projectId}`, data);
+                } catch (error) {
+                    console.log("TCL ~ file: Posts.js ~ line 44 ~ removeCompanyTagFromAllPosts ~ error", error)
+                }
+            }
+        }
+
+        console.log("TCL ~ file: Posts.js ~ line 57 ~ ChangeTaskAssign ~ posts", posts);
+    }
+
 }
 
 exports.fixEzraBug = async (projectId1, projectId2) => {

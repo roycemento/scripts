@@ -22,11 +22,9 @@ exports.restoreForms = async (projectId, formType, formTemplateId, unitIds,) => 
     // if (_.isNil(FORM_TYPES[formType]) || _.isEmpty(unitIds) || !formTemplateId)
     //     return;
 
-    projectId = projectId || '-Lnq-7UZueO9qfOAnMpi';
-    formTemplateId = formTemplateId || '-MFVDQw_WXlnMGwHh8h7';
-    formType = formType || 'general';
-    unitIds = ["-MFdqEztg6vyh5F8VcHD", "-MFdqEzuUWzsQsNXKCau", "-MFdqEzzx9ijK4GYXMqb", "-MFdqF-0XIhpGnIobZYi", "-MFdqF-5zwndkXjgA0T4", "-MFdqF-8dPbT57LeAPME"];
-
+    if (!projectId || !formType || !formTemplateId || !unitIds)
+        return;
+    
     let unitIdsMap = _.mapKeys(unitIds);
     let formsToRestores = {};
     let restoredFormsUrls = [];
@@ -40,7 +38,7 @@ exports.restoreForms = async (projectId, formType, formTemplateId, unitIds,) => 
                 const unitId = location ? location.unitId : null;
                 let body = { formType, projectId };
 
-                if (unitId && unitIdsMap[unitId] && signatures && form.formTemplateId === formTemplateId && _.values(signatures).length) {
+                if (unitId && unitIdsMap[unitId] && form.formTemplateId === formTemplateId) {
                     if (!formsToRestores[unitId])
                         formsToRestores[unitId] = { ...body, formId: id, numberOfSignatures: values(signatures).length };
                     else {
