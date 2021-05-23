@@ -1,0 +1,1930 @@
+{
+  "0004" : {
+    "id" : "0004",
+    "title" : {
+      "ar" : "الهندسة المعمارية",
+      "en" : "Architecture",
+      "es" : "Arquitectura",
+      "he" : "אדריכלות"
+    },
+    "types" : {
+      "all" : {
+        "SUB" : "SUB"
+      }
+    }
+  },
+  "0009" : {
+    "id" : "0009",
+    "title" : {
+      "ar" : "",
+      "en" : "Interior Designer",
+      "es" : "",
+      "he" : "עיצוב פנים"
+    },
+    "types" : {
+      "all" : {
+        "SUB" : "SUB"
+      }
+    }
+  },
+  "0021" : {
+    "color" : "#2C2C2C",
+    "id" : "0021",
+    "title" : {
+      "ar" : "المقاول العام",
+      "en" : "General contractor",
+      "es" : "Contratista general",
+      "he" : "קבלן ראשי"
+    },
+    "types" : {
+      "all" : {
+        "SUB" : "SUB"
+      }
+    }
+  },
+  "1001" : {
+    "id" : "1001",
+    "title" : {
+      "ar" : "أعمال النجارة",
+      "en" : "Carpentry",
+      "es" : "Carpintería",
+      "he" : "נגרות"
+    },
+    "types" : {
+      "all" : {
+        "SUB" : "SUB"
+      }
+    }
+  },
+  "1002" : {
+    "id" : "1002",
+    "title" : {
+      "ar" : "إعمال التنظيف",
+      "en" : "Cleaning",
+      "es" : "Limpieza",
+      "he" : "נקיון"
+    },
+    "types" : {
+      "all" : {
+        "SUB" : "SUB"
+      }
+    }
+  },
+  "1003" : {
+    "color" : "#bfbfbf",
+    "id" : "1003",
+    "title" : {
+      "ar" : "الأساس",
+      "en" : "Foundation",
+      "es" : "Cimientos",
+      "he" : "שלד"
+    },
+    "types" : {
+      "all" : {
+        "SUB" : "SUB"
+      }
+    }
+  },
+  "1004" : {
+    "id" : "1004",
+    "title" : {
+      "ar" : "الأبواب",
+      "en" : "Doors",
+      "es" : "Puertas",
+      "he" : "דלתות"
+    },
+    "types" : {
+      "all" : {
+        "SUB" : "SUB"
+      }
+    }
+  },
+  "1005" : {
+    "color" : "#44546a",
+    "id" : "1005",
+    "title" : {
+      "ar" : "دريوال (الألواح الصخرية)",
+      "en" : "Drywall (sheetrock)",
+      "es" : "Armadores",
+      "he" : "גבס"
+    },
+    "types" : {
+      "all" : {
+        "SUB" : "SUB"
+      }
+    }
+  },
+  "1006" : {
+    "id" : "1006",
+    "title" : {
+      "ar" : "أعمال الحفر",
+      "en" : "Earthwork",
+      "es" : "Terraplén",
+      "he" : "עבודות עפר"
+    },
+    "types" : {
+      "all" : {
+        "SUB" : "SUB"
+      }
+    }
+  },
+  "1007" : {
+    "color" : "#4472c4",
+    "id" : "1007",
+    "title" : {
+      "ar" : "كهربائي",
+      "en" : "Electrical",
+      "es" : "Eléctrico",
+      "he" : "חשמל"
+    },
+    "types" : {
+      "all" : {
+        "SUB" : "SUB"
+      }
+    }
+  },
+  "1008" : {
+    "color" : "#000066",
+    "id" : "1008",
+    "title" : {
+      "ar" : "الأرضية",
+      "en" : "Flooring",
+      "es" : "Piso",
+      "he" : "ריצוף"
+    },
+    "types" : {
+      "all" : {
+        "SUB" : "SUB"
+      }
+    }
+  },
+  "1009" : {
+    "id" : "1009",
+    "title" : {
+      "ar" : "تسقيف",
+      "en" : "Roofing",
+      "es" : "Techado",
+      "he" : "גג"
+    },
+    "types" : {
+      "all" : {
+        "SUB" : "SUB"
+      }
+    }
+  },
+  "1010" : {
+    "id" : "1010",
+    "title" : {
+      "ar" : "البوابات والأسوار",
+      "en" : "Gates and fences",
+      "es" : "Puertas y vallas",
+      "he" : "שערים וגדרות"
+    },
+    "types" : {
+      "all" : {
+        "SUB" : "SUB"
+      }
+    }
+  },
+  "1011" : {
+    "color" : "#b4c6e7",
+    "id" : "1011",
+    "title" : {
+      "ar" : "تكييف الهواء",
+      "en" : "HVAC (air conditioning)",
+      "es" : "Aire acondicionado",
+      "he" : "מיזוג אוויר"
+    },
+    "types" : {
+      "all" : {
+        "SUB" : "SUB"
+      }
+    }
+  },
+  "1012" : {
+    "id" : "1012",
+    "title" : {
+      "ar" : "لوحة زيتية",
+      "en" : "Painting",
+      "es" : "Pintura",
+      "he" : "צבע"
+    },
+    "types" : {
+      "all" : {
+        "SUB" : "SUB"
+      }
+    }
+  },
+  "1013" : {
+    "id" : "1013",
+    "title" : {
+      "ar" : "تسرب المياه",
+      "en" : "Waterproofing",
+      "es" : "Impermeabilización",
+      "he" : "איטום"
+    },
+    "types" : {
+      "all" : {
+        "SUB" : "SUB"
+      }
+    }
+  },
+  "1014" : {
+    "id" : "1014",
+    "title" : {
+      "ar" : "الجص",
+      "en" : "Stucco",
+      "es" : "Estuco",
+      "he" : "טיח"
+    },
+    "types" : {
+      "all" : {
+        "SUB" : "SUB"
+      }
+    }
+  },
+  "1015" : {
+    "color" : "#806000",
+    "id" : "1015",
+    "title" : {
+      "ar" : "شبابيك",
+      "en" : "Windows",
+      "es" : "Ventanas",
+      "he" : "אלומניום וחלונות"
+    },
+    "types" : {
+      "all" : {
+        "SUB" : "SUB"
+      }
+    }
+  },
+  "1016" : {
+    "color" : "#bf8f00",
+    "id" : "1016",
+    "title" : {
+      "ar" : "أنابيب المياه",
+      "en" : "Plumbing",
+      "es" : "Plomería",
+      "he" : "אינסטלציה"
+    },
+    "types" : {
+      "all" : {
+        "SUB" : "SUB"
+      }
+    }
+  },
+  "1017" : {
+    "id" : "1017",
+    "title" : {
+      "ar" : "الاتصالات",
+      "en" : "Communication",
+      "es" : "Comunicación",
+      "he" : "תקשורת"
+    },
+    "types" : {
+      "all" : {
+        "SUB" : "SUB"
+      }
+    }
+  },
+  "1018" : {
+    "id" : "1018",
+    "title" : {
+      "ar" : "مستشار",
+      "en" : "Consultant",
+      "es" : "Consultor",
+      "he" : "יועץ"
+    },
+    "types" : {
+      "all" : {
+        "SUB" : "SUB"
+      }
+    }
+  },
+  "1019" : {
+    "id" : "1019",
+    "title" : {
+      "en" : "Framing (Metal)",
+      "es" : "Enmarcado (Metal)",
+      "he" : ""
+    },
+    "types" : {
+      "all" : {
+        "SUB" : "SUB"
+      }
+    }
+  },
+  "1020" : {
+    "color" : "#f4b084",
+    "id" : "1020",
+    "title" : {
+      "ar" : "المطبخ",
+      "en" : "Kitchen",
+      "es" : "Cocina",
+      "he" : "מטבחים"
+    },
+    "types" : {
+      "all" : {
+        "SUB" : "SUB"
+      }
+    }
+  },
+  "1021" : {
+    "id" : "1021",
+    "title" : {
+      "ar" : "الباركيه",
+      "en" : "Parquet",
+      "es" : "Parquet",
+      "he" : "פרקט"
+    },
+    "types" : {
+      "all" : {
+        "SUB" : "SUB"
+      }
+    }
+  },
+  "1022" : {
+    "color" : "#9933ff",
+    "id" : "1022",
+    "title" : {
+      "ar" : "غاز",
+      "en" : "Gas",
+      "es" : "Gas",
+      "he" : "גז"
+    },
+    "types" : {
+      "all" : {
+        "SUB" : "SUB"
+      }
+    }
+  },
+  "1023" : {
+    "id" : "1023",
+    "title" : {
+      "ar" : "ضخ السمسم",
+      "en" : "Sesame Pumping",
+      "es" : "Bombeo de sesame",
+      "he" : "שאיבת סומסום"
+    },
+    "types" : {
+      "all" : {
+        "SUB" : "SUB"
+      }
+    }
+  },
+  "1024" : {
+    "color" : "#ff66ff",
+    "id" : "1024",
+    "title" : {
+      "ar" : "الماسونية",
+      "en" : "Masonry",
+      "es" : "Albañilería",
+      "he" : "בנייה"
+    },
+    "types" : {
+      "all" : {
+        "SUB" : "SUB"
+      }
+    }
+  },
+  "1025" : {
+    "color" : "#ed7d31",
+    "id" : "1025",
+    "title" : {
+      "ar" : "التشطيبات",
+      "en" : "Finishes",
+      "es" : "Acabados",
+      "he" : "גמרים"
+    },
+    "types" : {
+      "all" : {
+        "SUB" : "SUB"
+      }
+    }
+  },
+  "1026" : {
+    "id" : "1026",
+    "title" : {
+      "ar" : "البلاط",
+      "en" : "Tiles",
+      "es" : "Azulejos",
+      "he" : "חיפוי"
+    },
+    "types" : {
+      "all" : {
+        "SUB" : "SUB"
+      }
+    }
+  },
+  "1027" : {
+    "id" : "1027",
+    "title" : {
+      "ar" : "معطف حراري",
+      "en" : "EIFS",
+      "es" : "Aislamiento exterior y acabado",
+      "he" : "איטום חוץ"
+    },
+    "types" : {
+      "all" : {
+        "SUB" : "SUB"
+      }
+    }
+  },
+  "1028" : {
+    "id" : "1028",
+    "title" : {
+      "ar" : "الرشاشات",
+      "en" : "Sprinklers",
+      "es" : "SHCI",
+      "he" : "ספרינקלרים"
+    },
+    "types" : {
+      "all" : {
+        "SUB" : "SUB"
+      }
+    }
+  },
+  "1029" : {
+    "id" : "1029",
+    "title" : {
+      "en" : "Millwork",
+      "es" : "Carpintería",
+      "he" : ""
+    },
+    "types" : {
+      "all" : {
+        "SUB" : "SUB"
+      }
+    }
+  },
+  "1030" : {
+    "id" : "1030",
+    "title" : {
+      "ar" : "الرصف",
+      "en" : "Paving",
+      "es" : "Pavimentación",
+      "he" : "סלילה"
+    },
+    "types" : {
+      "all" : {
+        "SUB" : "SUB"
+      }
+    }
+  },
+  "1031" : {
+    "id" : "1031",
+    "title" : {
+      "ar" : "جهد منخفض",
+      "en" : "Low Voltage",
+      "es" : "Baja tensión",
+      "he" : "מתח נמוך"
+    },
+    "types" : {
+      "all" : {
+        "SUB" : "SUB"
+      }
+    }
+  },
+  "1032" : {
+    "id" : "1032",
+    "title" : {
+      "ar" : "إنذار حريق",
+      "en" : "Fire Alarm",
+      "es" : "Alarma de incendios",
+      "he" : "אזעקת אש"
+    },
+    "types" : {
+      "all" : {
+        "SUB" : "SUB"
+      }
+    }
+  },
+  "1033" : {
+    "id" : "1033",
+    "title" : {
+      "ar" : "الخزائن",
+      "en" : "Cabinets",
+      "es" : "Armarios",
+      "he" : "ארונות"
+    },
+    "types" : {
+      "all" : {
+        "SUB" : "SUB"
+      }
+    }
+  },
+  "1034" : {
+    "id" : "1034",
+    "title" : {
+      "ar" : "المصاعد",
+      "en" : "Elevators",
+      "es" : "Elevadores",
+      "he" : "מעליות"
+    },
+    "types" : {
+      "all" : {
+        "SUB" : "SUB"
+      }
+    }
+  },
+  "1035" : {
+    "id" : "1035",
+    "title" : {
+      "ar" : "السقالات",
+      "en" : "Scaffolds",
+      "es" : "Andamios",
+      "he" : "פיגומים"
+    },
+    "types" : {
+      "all" : {
+        "SUB" : "SUB"
+      }
+    }
+  },
+  "1036" : {
+    "id" : "1036",
+    "title" : {
+      "ar" : "رافعة",
+      "en" : "Hoist",
+      "es" : "Grúa",
+      "he" : "מעליות משא"
+    },
+    "types" : {
+      "all" : {
+        "SUB" : "SUB"
+      }
+    }
+  },
+  "1037" : {
+    "id" : "1037",
+    "title" : {
+      "ar" : "العمال",
+      "en" : "Laborers",
+      "es" : "Trabajadores",
+      "he" : "כח אדם"
+    },
+    "types" : {
+      "all" : {
+        "SUB" : "SUB"
+      }
+    }
+  },
+  "1038" : {
+    "color" : "#F62626",
+    "id" : "1038",
+    "title" : {
+      "ar" : "سلامة الموقع",
+      "en" : "Site Safety",
+      "es" : "Seguridad del sitio",
+      "he" : "בטיחות"
+    },
+    "types" : {
+      "all" : {
+        "SUB" : "SUB"
+      }
+    }
+  },
+  "1039" : {
+    "id" : "1039",
+    "title" : {
+      "ar" : "الأعمال المعدنية (متفرقات)",
+      "en" : "Metal work (Misc)",
+      "es" : "Trabajo de metal (varios)",
+      "he" : "מסגרות"
+    },
+    "types" : {
+      "all" : {
+        "SUB" : "SUB"
+      }
+    }
+  },
+  "1040" : {
+    "id" : "1040",
+    "title" : {
+      "ar" : "المعدن الإنشائي",
+      "en" : "Structural Metal",
+      "es" : "Metal estructural",
+      "he" : "שלד מתכת"
+    },
+    "types" : {
+      "all" : {
+        "SUB" : "SUB"
+      }
+    }
+  },
+  "1041" : {
+    "id" : "1041",
+    "title" : {
+      "ar" : "حجر",
+      "en" : "Stone",
+      "es" : "Piedra",
+      "he" : "אבן"
+    },
+    "types" : {
+      "all" : {
+        "SUB" : "SUB"
+      }
+    }
+  },
+  "1042" : {
+    "id" : "1042",
+    "title" : {
+      "ar" : "كونترتوب",
+      "en" : "Countertop",
+      "es" : "Encimera",
+      "he" : "משטח למטבח (שיש)"
+    },
+    "types" : {
+      "all" : {
+        "SUB" : "SUB"
+      }
+    }
+  },
+  "1043" : {
+    "id" : "1043",
+    "title" : {
+      "ar" : "خدمات",
+      "en" : "Utilities",
+      "es" : "Utilidades",
+      "he" : "כלי עזר"
+    },
+    "types" : {
+      "all" : {
+        "SUB" : "SUB"
+      }
+    }
+  },
+  "1044" : {
+    "id" : "1044",
+    "title" : {
+      "ar" : "الأمان",
+      "en" : "Security",
+      "es" : "Seguridad",
+      "he" : "אבטחה"
+    },
+    "types" : {
+      "all" : {
+        "SUB" : "SUB"
+      }
+    }
+  },
+  "1045" : {
+    "id" : "1045",
+    "title" : {
+      "ar" : "التليفزيون الكابل ",
+      "en" : "Cable TV",
+      "es" : "Televisión por cable",
+      "he" : "תקשורת טלויזיה"
+    },
+    "types" : {
+      "all" : {
+        "SUB" : "SUB"
+      }
+    }
+  },
+  "1046" : {
+    "id" : "1046",
+    "title" : {
+      "en" : "Taping",
+      "es" : "Atar con cinta",
+      "he" : ""
+    },
+    "types" : {
+      "all" : {
+        "SUB" : "SUB"
+      }
+    }
+  },
+  "1047" : {
+    "id" : "1047",
+    "title" : {
+      "ar" : "السير",
+      "en" : "Piles",
+      "es" : "Pilotes",
+      "he" : "כלונסאות"
+    },
+    "types" : {
+      "all" : {
+        "SUB" : "SUB"
+      }
+    }
+  },
+  "1048" : {
+    "id" : "1048",
+    "title" : {
+      "ar" : "برج الماء",
+      "en" : "Water Tower",
+      "es" : "Tanque reserva",
+      "he" : "דוודים"
+    },
+    "types" : {
+      "all" : {
+        "SUB" : "SUB"
+      }
+    }
+  },
+  "1049" : {
+    "id" : "1049",
+    "title" : {
+      "ar" : "كوة",
+      "en" : "Skylight",
+      "es" : "Tragaluz",
+      "he" : "סקייליט (חלון גג)"
+    },
+    "types" : {
+      "all" : {
+        "SUB" : "SUB"
+      }
+    }
+  },
+  "1050" : {
+    "id" : "1050",
+    "title" : {
+      "ar" : "تنظيف الواجهة",
+      "en" : "Facade cleaning",
+      "es" : "Limpieza de fachadas",
+      "he" : "ניקוי חזיתות"
+    },
+    "types" : {
+      "all" : {
+        "SUB" : "SUB"
+      }
+    }
+  },
+  "1051" : {
+    "id" : "1051",
+    "title" : {
+      "ar" : "الكسوة الألومنيوم",
+      "he" : "חיפוי אלומיניום"
+    },
+    "types" : {
+      "all" : {
+        "SUB" : "SUB"
+      }
+    }
+  },
+  "1052" : {
+    "color" : "#b4c6e7",
+    "id" : "1052",
+    "title" : {
+      "ar" : "الأبواب الداخلية",
+      "en" : "Interior doors",
+      "es" : "Puertas interiores",
+      "he" : "דלתות פנים"
+    },
+    "types" : {
+      "all" : {
+        "SUB" : "SUB"
+      }
+    }
+  },
+  "1053" : {
+    "id" : "1053",
+    "title" : {
+      "ar" : "الدرابزين",
+      "en" : "Railing",
+      "es" : "Barandal",
+      "he" : "מעקות"
+    },
+    "types" : {
+      "all" : {
+        "SUB" : "SUB"
+      }
+    }
+  },
+  "1054" : {
+    "id" : "1054",
+    "title" : {
+      "ar" : "إخفاء الغسيل ",
+      "he" : "מסתור כביסה"
+    },
+    "types" : {
+      "all" : {
+        "SUB" : "SUB"
+      }
+    }
+  },
+  "1055" : {
+    "id" : "1055",
+    "title" : {
+      "ar" : "الاختبارات المعملية",
+      "he" : "בדיקות מעבדה"
+    },
+    "types" : {
+      "all" : {
+        "SUB" : "SUB"
+      }
+    }
+  },
+  "1056" : {
+    "id" : "1056",
+    "title" : {
+      "ar" : "طفايات الحريق - إطلاق الدخان",
+      "he" : "כיבוי אש - שחרור עשן"
+    },
+    "types" : {
+      "all" : {
+        "SUB" : "SUB"
+      }
+    }
+  },
+  "1057" : {
+    "id" : "1057",
+    "title" : {
+      "ar" : "نوافذ (غرفة آمنة)",
+      "he" : "חלונות ממ\"ד"
+    },
+    "types" : {
+      "all" : {
+        "SUB" : "SUB"
+      }
+    }
+  },
+  "1059" : {
+    "id" : "1059",
+    "title" : {
+      "ar" : "منفذ القمامة",
+      "en" : "Trash Chute",
+      "es" : "Ducto de basura",
+      "he" : "שוט אשפה"
+    },
+    "types" : {
+      "all" : {
+        "SUB" : "SUB"
+      }
+    }
+  },
+  "1060" : {
+    "id" : "1060",
+    "title" : {
+      "en" : "CMU",
+      "es" : "Hormigón",
+      "he" : ""
+    },
+    "types" : {
+      "all" : {
+        "SUB" : "SUB"
+      }
+    }
+  },
+  "1061" : {
+    "id" : "1061",
+    "title" : {
+      "ar" : "قالب الطوب",
+      "en" : "Brick",
+      "es" : "Ladrillo",
+      "he" : "לבנים"
+    },
+    "types" : {
+      "all" : {
+        "SUB" : "SUB"
+      }
+    }
+  },
+  "1062" : {
+    "id" : "1062",
+    "title" : {
+      "en" : "Shelf & Pole",
+      "es" : "Estante y poste",
+      "he" : ""
+    },
+    "types" : {
+      "all" : {
+        "SUB" : "SUB"
+      }
+    }
+  },
+  "1063" : {
+    "id" : "1063",
+    "title" : {
+      "en" : "Glass Doors & Panels",
+      "es" : "Puertas y paneles de vidrio",
+      "he" : ""
+    },
+    "types" : {
+      "all" : {
+        "SUB" : "SUB"
+      }
+    }
+  },
+  "1064" : {
+    "id" : "1064",
+    "title" : {
+      "ar" : "تدابير ",
+      "he" : "מודד"
+    },
+    "types" : {
+      "all" : {
+        "SUB" : "SUB"
+      }
+    }
+  },
+  "1065" : {
+    "id" : "1065",
+    "title" : {
+      "ar" : "شبكة السلامة",
+      "en" : "Safety Netting",
+      "es" : "Red de seguridad",
+      "he" : "רשתות בטיחות"
+    },
+    "types" : {
+      "all" : {
+        "SUB" : "SUB"
+      }
+    }
+  },
+  "1066" : {
+    "id" : "1066",
+    "title" : {
+      "ar" : "الأجهزة",
+      "en" : "Appliances",
+      "es" : "Electrodomésticos",
+      "he" : "אביזרי חשמל"
+    },
+    "types" : {
+      "all" : {
+        "SUB" : "SUB"
+      }
+    }
+  },
+  "1067" : {
+    "id" : "1067",
+    "title" : {
+      "ar" : "",
+      "en" : "tenant coordinator",
+      "es" : "",
+      "he" : "מתאם דיירים"
+    },
+    "types" : {
+      "all" : {
+        "SUB" : "SUB"
+      }
+    }
+  },
+  "1068" : {
+    "id" : "1068",
+    "title" : {
+      "ar" : "سخان المياه",
+      "en" : "Boiler",
+      "es" : "Caldera",
+      "he" : "דוד"
+    },
+    "types" : {
+      "maintenance" : {
+        "SUB" : "SUB"
+      }
+    }
+  },
+  "1069" : {
+    "id" : "1069",
+    "title" : {
+      "ar" : "إبادة",
+      "en" : "Extermination",
+      "es" : "Exterminio",
+      "he" : "הדברה"
+    },
+    "types" : {
+      "maintenance" : {
+        "SUB" : "SUB"
+      }
+    }
+  },
+  "1070" : {
+    "id" : "1070",
+    "title" : {
+      "ar" : "نازعة للنفاية",
+      "en" : "Trash Removal",
+      "es" : "Eliminación de basura",
+      "he" : "פינוי אשפה"
+    },
+    "types" : {
+      "maintenance" : {
+        "SUB" : "SUB"
+      }
+    }
+  },
+  "1071" : {
+    "id" : "1071",
+    "title" : {
+      "ar" : "معالجة المياه",
+      "en" : "Water Treatment",
+      "es" : "Tratamiento de aguas",
+      "he" : "טיפול מים"
+    },
+    "types" : {
+      "maintenance" : {
+        "SUB" : "SUB"
+      }
+    }
+  },
+  "1072" : {
+    "id" : "1072",
+    "title" : {
+      "ar" : "صيانة الأرضيات",
+      "en" : "Floor Maintenance",
+      "es" : "Mantenimiento del piso",
+      "he" : "תחזוקת רצפה"
+    },
+    "types" : {
+      "maintenance" : {
+        "SUB" : "SUB"
+      }
+    }
+  },
+  "1073" : {
+    "id" : "1073",
+    "title" : {
+      "ar" : "إصلاح الأرضية",
+      "en" : "Floor Repair",
+      "es" : "Reparación de piso",
+      "he" : "תיקון רצפה"
+    },
+    "types" : {
+      "maintenance" : {
+        "SUB" : "SUB"
+      }
+    }
+  },
+  "1074" : {
+    "id" : "1074",
+    "title" : {
+      "ar" : "إصلاح الأجهزة",
+      "en" : "Appliances Repair",
+      "es" : "Reparación de electrodomésticos",
+      "he" : "תיקון מכשירי חשמל"
+    },
+    "types" : {
+      "maintenance" : {
+        "SUB" : "SUB"
+      }
+    }
+  },
+  "1075" : {
+    "id" : "1075",
+    "title" : {
+      "ar" : "حوض التزجيج",
+      "en" : "Tub Glazing",
+      "es" : "Esmaltado de tina",
+      "he" : "תיקון אמבטיה"
+    },
+    "types" : {
+      "maintenance" : {
+        "SUB" : "SUB"
+      }
+    }
+  },
+  "1076" : {
+    "color" : "#2C2C2C",
+    "id" : "1076",
+    "title" : {
+      "ar" : "المقاول العام",
+      "en" : "General contractor",
+      "es" : "Contratista general",
+      "he" : "קבלן ראשי"
+    },
+    "types" : {
+      "all" : {
+        "SUB" : "SUB"
+      }
+    }
+  },
+  "1077" : {
+    "id" : "1077",
+    "title" : {
+      "ar" : "إصلاح الزجاج",
+      "en" : "Glass Repair",
+      "es" : "Reparación de vidrio",
+      "he" : "תיקון זכוכית"
+    },
+    "types" : {
+      "maintenance" : {
+        "SUB" : "SUB"
+      }
+    }
+  },
+  "1078" : {
+    "id" : "1078",
+    "title" : {
+      "ar" : "تنفس",
+      "en" : "Ventilation",
+      "es" : "Ventilación",
+      "he" : "איוורור"
+    },
+    "types" : {
+      "all" : {
+        "SUB" : "SUB"
+      }
+    }
+  },
+  "1079" : {
+    "id" : "1079",
+    "title" : {
+      "ar" : "السمسم",
+      "en" : "Sesame",
+      "es" : "Sesame",
+      "he" : "סומסום"
+    },
+    "types" : {
+      "all" : {
+        "SUB" : "SUB"
+      }
+    }
+  },
+  "1080" : {
+    "id" : "1080",
+    "title" : {
+      "ar" : "سلس ",
+      "he" : "תפר"
+    },
+    "types" : {
+      "all" : {
+        "SUB" : "SUB"
+      }
+    }
+  },
+  "1081" : {
+    "id" : "1081",
+    "title" : {
+      "ar" : "بندقية ",
+      "he" : "רובה"
+    },
+    "types" : {
+      "all" : {
+        "SUB" : "SUB"
+      }
+    }
+  },
+  "1082" : {
+    "id" : "1082",
+    "title" : {
+      "ar" : "ظلال النافذة",
+      "en" : "Window shades",
+      "es" : "Persianas",
+      "he" : "תריסים"
+    },
+    "types" : {
+      "all" : {
+        "SUB" : "SUB"
+      }
+    }
+  },
+  "1083" : {
+    "id" : "1083",
+    "title" : {
+      "ar" : "",
+      "en" : "",
+      "es" : "Pasteros",
+      "he" : ""
+    },
+    "types" : {
+      "all" : {
+        "SUB" : "SUB"
+      }
+    }
+  },
+  "1084" : {
+    "id" : "1084",
+    "title" : {
+      "ar" : "اثاث",
+      "en" : "Furnitures",
+      "es" : "Mueble",
+      "he" : "ריהוט"
+    },
+    "types" : {
+      "all" : {
+        "SUB" : "SUB"
+      }
+    }
+  },
+  "1085" : {
+    "id" : "1085",
+    "title" : {
+      "ar" : "السلامة من الحرائق",
+      "en" : "Fire Safety",
+      "es" : "Seguridad contra incendios",
+      "he" : "בטיחות אש"
+    },
+    "types" : {
+      "all" : {
+        "SUB" : "SUB"
+      },
+      "maintenance" : {
+        "SUB" : "SUB"
+      }
+    }
+  },
+  "1086" : {
+    "id" : "1086",
+    "title" : {
+      "ar" : "مشرف",
+      "en" : "Supervisor",
+      "es" : "Supervisor",
+      "he" : "פיקוח"
+    },
+    "types" : {
+      "all" : {
+        "SUB" : "SUB"
+      }
+    }
+  },
+  "1087" : {
+    "id" : "1087",
+    "title" : {
+      "ar" : "بطانة",
+      "en" : "Lining",
+      "es" : "Forro",
+      "he" : "בידוד"
+    },
+    "types" : {
+      "all" : {
+        "SUB" : "SUB"
+      }
+    }
+  },
+  "1088" : {
+    "id" : "1088",
+    "title" : {
+      "ar" : "",
+      "en" : "",
+      "es" : "",
+      "he" : "עוגנים"
+    },
+    "types" : {
+      "all" : {
+        "SUB" : "SUB"
+      }
+    }
+  },
+  "1089" : {
+    "id" : "1089",
+    "title" : {
+      "ar" : "",
+      "en" : "",
+      "es" : "",
+      "he" : "מכר"
+    },
+    "types" : {
+      "all" : {
+        "SUB" : "SUB"
+      }
+    }
+  },
+  "1090" : {
+    "id" : "1090",
+    "title" : {
+      "ar" : "",
+      "en" : "",
+      "es" : "",
+      "he" : "אישור ציוד"
+    },
+    "types" : {
+      "all" : {
+        "SUB" : "SUB"
+      }
+    }
+  },
+  "1091" : {
+    "id" : "1091",
+    "title" : {
+      "ar" : "",
+      "en" : "",
+      "es" : "",
+      "he" : "אקוסטי-תרמי"
+    },
+    "types" : {
+      "all" : {
+        "SUB" : "SUB"
+      }
+    }
+  },
+  "1092" : {
+    "id" : "1092",
+    "title" : {
+      "ar" : "",
+      "en" : "",
+      "es" : "",
+      "he" : "יציקת מדה"
+    },
+    "types" : {
+      "all" : {
+        "SUB" : "SUB"
+      }
+    }
+  },
+  "1093" : {
+    "id" : "1093",
+    "title" : {
+      "ar" : "",
+      "en" : "",
+      "es" : "",
+      "he" : "פיקוח עליון"
+    },
+    "types" : {
+      "all" : {
+        "SUB" : "SUB"
+      }
+    }
+  },
+  "1094" : {
+    "id" : "1094",
+    "title" : {
+      "ar" : "",
+      "en" : "",
+      "es" : "",
+      "he" : "יועץ קרקע"
+    },
+    "types" : {
+      "all" : {
+        "SUB" : "SUB"
+      }
+    }
+  },
+  "1095" : {
+    "id" : "1095",
+    "title" : {
+      "ar" : "",
+      "en" : "",
+      "es" : "",
+      "he" : "קונסטרוקציה"
+    },
+    "types" : {
+      "all" : {
+        "SUB" : "SUB"
+      }
+    }
+  },
+  "1096" : {
+    "id" : "1096",
+    "title" : {
+      "ar" : "",
+      "en" : "",
+      "es" : "",
+      "he" : "פיתוח"
+    },
+    "types" : {
+      "all" : {
+        "SUB" : "SUB"
+      }
+    }
+  },
+  "1097" : {
+    "id" : "1097",
+    "title" : {
+      "ar" : "",
+      "en" : "",
+      "es" : "",
+      "he" : "מערכת סולרית"
+    },
+    "types" : {
+      "all" : {
+        "SUB" : "SUB"
+      }
+    }
+  },
+  "1098" : {
+    "id" : "1098",
+    "title" : {
+      "ar" : "",
+      "en" : "",
+      "es" : "Equipos",
+      "he" : ""
+    },
+    "types" : {
+      "all" : {
+        "SUB" : "SUB"
+      }
+    }
+  },
+  "1099" : {
+    "id" : "1099",
+    "title" : {
+      "ar" : "",
+      "en" : "",
+      "es" : "",
+      "he" : "דלתות אש"
+    },
+    "types" : {
+      "all" : {
+        "SUB" : "SUB"
+      }
+    }
+  },
+  "1100" : {
+    "id" : "1100",
+    "title" : {
+      "ar" : "",
+      "en" : "",
+      "es" : "",
+      "he" : "קיר מסך"
+    },
+    "types" : {
+      "all" : {
+        "SUB" : "SUB"
+      }
+    }
+  },
+  "1101" : {
+    "id" : "1101",
+    "title" : {
+      "ar" : "",
+      "en" : "",
+      "es" : "",
+      "he" : "דחסנית"
+    },
+    "types" : {
+      "all" : {
+        "SUB" : "SUB"
+      }
+    }
+  },
+  "1102" : {
+    "id" : "1102",
+    "title" : {
+      "ar" : "",
+      "en" : "",
+      "es" : "",
+      "he" : "התקנת אמבטיה/אגנית"
+    },
+    "types" : {
+      "all" : {
+        "SUB" : "SUB"
+      }
+    }
+  },
+  "1103" : {
+    "id" : "1103",
+    "title" : {
+      "ar" : "",
+      "en" : "",
+      "es" : "",
+      "he" : "כלים סנטיריים"
+    },
+    "types" : {
+      "all" : {
+        "SUB" : "SUB"
+      }
+    }
+  },
+  "1104" : {
+    "id" : "1104",
+    "title" : {
+      "ar" : "",
+      "en" : "",
+      "es" : "",
+      "he" : "שילוט"
+    },
+    "types" : {
+      "all" : {
+        "SUB" : "SUB"
+      }
+    }
+  },
+  "1105" : {
+    "id" : "1105",
+    "title" : {
+      "ar" : "",
+      "en" : "",
+      "es" : "",
+      "he" : "תיבות דואר"
+    },
+    "types" : {
+      "all" : {
+        "SUB" : "SUB"
+      }
+    }
+  },
+  "1106" : {
+    "id" : "1106",
+    "title" : {
+      "ar" : "",
+      "en" : "",
+      "es" : "",
+      "he" : "צמ\"ה"
+    },
+    "types" : {
+      "all" : {
+        "SUB" : "SUB"
+      }
+    }
+  },
+  "1107" : {
+    "id" : "1107",
+    "title" : {
+      "ar" : "",
+      "en" : "",
+      "es" : "",
+      "he" : "קידוחים"
+    },
+    "types" : {
+      "all" : {
+        "SUB" : "SUB"
+      }
+    }
+  },
+  "1108" : {
+    "id" : "1108",
+    "title" : {
+      "ar" : "",
+      "en" : "",
+      "es" : "",
+      "he" : "שערים חשמליים"
+    },
+    "types" : {
+      "all" : {
+        "SUB" : "SUB"
+      }
+    }
+  },
+  "1109" : {
+    "id" : "1109",
+    "title" : {
+      "ar" : "",
+      "en" : "",
+      "es" : "",
+      "he" : "גידור"
+    },
+    "types" : {
+      "all" : {
+        "SUB" : "SUB"
+      }
+    }
+  },
+  "1110" : {
+    "id" : "1110",
+    "title" : {
+      "ar" : "",
+      "en" : "",
+      "es" : "",
+      "he" : "מרצפות"
+    },
+    "types" : {
+      "all" : {
+        "SUB" : "SUB"
+      }
+    }
+  },
+  "1111" : {
+    "id" : "1111",
+    "title" : {
+      "ar" : "",
+      "en" : "",
+      "es" : "",
+      "he" : "מדרגות"
+    },
+    "types" : {
+      "all" : {
+        "SUB" : "SUB"
+      }
+    }
+  },
+  "1112" : {
+    "id" : "1112",
+    "title" : {
+      "ar" : "",
+      "en" : "",
+      "es" : "",
+      "he" : "ניהול איכות"
+    },
+    "types" : {
+      "all" : {
+        "SUB" : "SUB"
+      }
+    }
+  },
+  "1113" : {
+    "id" : "1113",
+    "title" : {
+      "ar" : "",
+      "en" : "",
+      "es" : "",
+      "he" : "שער חשמלי"
+    },
+    "types" : {
+      "all" : {
+        "SUB" : "SUB"
+      }
+    }
+  },
+  "1114" : {
+    "id" : "1114",
+    "title" : {
+      "ar" : "",
+      "en" : "Self leveling concrete",
+      "es" : "",
+      "he" : "בטון מוחלק"
+    },
+    "types" : {
+      "all" : {
+        "SUB" : "SUB"
+      }
+    }
+  },
+  "1115" : {
+    "id" : "1115",
+    "title" : {
+      "ar" : "",
+      "en" : "Superposition",
+      "es" : "",
+      "he" : "סופרפוזיציה"
+    },
+    "types" : {
+      "all" : {
+        "SUB" : "SUB"
+      }
+    }
+  },
+  "1116" : {
+    "id" : "1116",
+    "title" : {
+      "ar" : "",
+      "en" : "",
+      "es" : "",
+      "he" : "יועץ אלומיניום"
+    },
+    "types" : {
+      "all" : {
+        "SUB" : "SUB"
+      }
+    }
+  },
+  "1117" : {
+    "id" : "1117",
+    "title" : {
+      "ar" : "",
+      "en" : "",
+      "es" : "",
+      "he" : "חשמל מטבחים"
+    },
+    "types" : {
+      "all" : {
+        "SUB" : "SUB"
+      }
+    }
+  },
+  "1118" : {
+    "id" : "1118",
+    "title" : {
+      "ar" : "",
+      "en" : "",
+      "es" : "",
+      "he" : "אינסטלציה מטבחים"
+    },
+    "types" : {
+      "all" : {
+        "SUB" : "SUB"
+      }
+    }
+  },
+  "1119" : {
+    "id" : "1119",
+    "title" : {
+      "ar" : "",
+      "en" : "",
+      "es" : "",
+      "he" : "חתימת דייר"
+    },
+    "types" : {
+      "all" : {
+        "SUB" : "SUB"
+      }
+    }
+  },
+  "1120" : {
+    "id" : "1120",
+    "title" : {
+      "ar" : "",
+      "en" : "",
+      "es" : "",
+      "he" : "בניה ירוקה"
+    },
+    "types" : {
+      "all" : {
+        "SUB" : "SUB"
+      }
+    }
+  },
+  "1121" : {
+    "id" : "1121",
+    "title" : {
+      "ar" : "",
+      "en" : "",
+      "es" : "",
+      "he" : "תקרה פריקה"
+    },
+    "types" : {
+      "all" : {
+        "SUB" : "SUB"
+      }
+    }
+  },
+  "1122" : {
+    "id" : "1122",
+    "title" : {
+      "ar" : "",
+      "en" : "",
+      "es" : "",
+      "he" : "בדיקת מעבדה - הצפה"
+    },
+    "types" : {
+      "all" : {
+        "SUB" : "SUB"
+      }
+    }
+  },
+  "1123" : {
+    "id" : "1123",
+    "title" : {
+      "ar" : "",
+      "en" : "",
+      "es" : "",
+      "he" : "קבלת מעטפת מבנה"
+    },
+    "types" : {
+      "all" : {
+        "SUB" : "SUB"
+      }
+    }
+  },
+  "1124" : {
+    "id" : "1124",
+    "title" : {
+      "ar" : "",
+      "en" : "Transportation",
+      "es" : "",
+      "he" : "תנועה"
+    },
+    "types" : {
+      "all" : {
+        "SUB" : "SUB"
+      }
+    }
+  },
+  "1125" : {
+    "id" : "1125",
+    "title" : {
+      "ar" : "",
+      "en" : "",
+      "es" : "",
+      "he" : "יועץ איטום"
+    },
+    "types" : {
+      "all" : {
+        "SUB" : "SUB"
+      }
+    }
+  },
+  "1126" : {
+    "id" : "1126",
+    "title" : {
+      "ar" : "",
+      "en" : "",
+      "es" : "",
+      "he" : "משאבות"
+    },
+    "types" : {
+      "all" : {
+        "SUB" : "SUB"
+      }
+    }
+  },
+  "1127" : {
+    "id" : "1127",
+    "title" : {
+      "ar" : "",
+      "en" : "",
+      "es" : "",
+      "he" : "מערכות"
+    },
+    "types" : {
+      "all" : {
+        "SUB" : "SUB"
+      }
+    }
+  },
+  "1128" : {
+    "id" : "1128",
+    "title" : {
+      "ar" : "",
+      "en" : "",
+      "es" : "",
+      "he" : "החלפת אבן"
+    },
+    "types" : {
+      "all" : {
+        "SUB" : "SUB"
+      }
+    }
+  },
+  "1129" : {
+    "id" : "1129",
+    "title" : {
+      "ar" : "",
+      "en" : "",
+      "es" : "",
+      "he" : "דלתות וממ\"ד"
+    },
+    "types" : {
+      "all" : {
+        "SUB" : "SUB"
+      }
+    }
+  },
+  "1130" : {
+    "id" : "1130",
+    "title" : {
+      "ar" : "",
+      "en" : "Concrete superstructure",
+      "es" : "",
+      "he" : "שלד בטון"
+    },
+    "types" : {
+      "all" : {
+        "SUB" : "SUB"
+      }
+    }
+  },
+  "1131" : {
+    "id" : "1131",
+    "title" : {
+      "ar" : "",
+      "en" : "Flooring supply",
+      "es" : "",
+      "he" : "אספקת ריצוף"
+    },
+    "types" : {
+      "all" : {
+        "SUB" : "SUB"
+      }
+    }
+  },
+  "1132" : {
+    "id" : "1132",
+    "title" : {
+      "ar" : "",
+      "en" : "",
+      "es" : "",
+      "he" : "וונטות"
+    },
+    "types" : {
+      "all" : {
+        "SUB" : "SUB"
+      }
+    }
+  },
+  "1133" : {
+    "id" : "1133",
+    "title" : {
+      "ar" : "",
+      "en" : "Bathroom Cabinets",
+      "es" : "",
+      "he" : "ארונות אמבטיה"
+    },
+    "types" : {
+      "all" : {
+        "SUB" : "SUB"
+      }
+    }
+  },
+  "1134" : {
+    "id" : "1134",
+    "title" : {
+      "ar" : "",
+      "en" : "Kitchen cupboard",
+      "es" : "",
+      "he" : "ארונות מטבח"
+    },
+    "types" : {
+      "all" : {
+        "SUB" : "SUB"
+      }
+    }
+  },
+  "1135" : {
+    "id" : "1135",
+    "title" : {
+      "ar" : "",
+      "en" : "Fire stopping",
+      "es" : "",
+      "he" : ""
+    },
+    "types" : {
+      "all" : {
+        "SUB" : "SUB"
+      }
+    }
+  },
+  "1300" : {
+    "id" : "1300",
+    "title" : {
+      "ar" : "أخرى",
+      "en" : "Other",
+      "es" : "Otros",
+      "he" : "אחר"
+    },
+    "types" : {
+      "all" : {
+        "SUB" : "SUB"
+      }
+    }
+  }
+}

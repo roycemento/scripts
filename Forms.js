@@ -4,6 +4,10 @@ const _ = require('lodash');
 const utils = require('./Utils');
 const apiServer = 'http://localhost:8080';
 const puppeteerServer = 'https://pdf.cemento.ai';
+const puppeteerServerDev = 'http://localhost:8988';
+
+// 'http://localhost:8988';
+// || 'https://pdf.cemento.ai';
 
 
 const RESOURCES = {
@@ -18,14 +22,64 @@ const FORM_TYPES = {
     other: 'other'
 };
 
+exports.summarySafetyReport = async (projects) => {
+    if (!projects)
+        return;
+
+    let restoredFormsUrls = [];
+    let formType = "temp";
+
+    for (let projectId of projects) {
+        try {
+            let projectData = (await axios.get(`${apiServer}/v1/projects?projectId=${projectId}`)).data;
+            let projectName = _.get(projectData, [projectId, 'title'], projectId);
+
+            let newForm = (await axios.post(`${apiServer}/v1/forms`, {
+                projectId,
+                type: formType,
+                skipEmail: true,
+                reportDate: 1616889600000,
+                "formTemplateId": "-safetySummeryReport",
+                formStartTS: 1616889600000,
+                readyToGenerateTS: 1616889600000
+            })).data
+
+            let formId = _.get(newForm, ['id']);
+            let body = { projectId, formId, formType };
+            let generatedForm = (await axios.post(RESOURCES.GENERATE_PDF, body)).data;
+
+            if (generatedForm && generatedForm.uri) {
+                let dynamicLinkRes = (await axios.post(RESOURCES.DYNAMIC_LINK,
+                    {
+                        "dynamicLinkInfo": {
+                            "domainUriPrefix": "https://cemento.page.link",
+                            "link": generatedForm.uri,
+                        }
+                    })).data;
+
+                let shortLink = dynamicLinkRes ? dynamicLinkRes.shortLink : null;
+
+                if (shortLink)
+                    restoredFormsUrls.push({ projectName, shortLink });
+            }
+
+            await utils.threadSleep(3000);
+        }
+        catch (error) {
+            console.log("TCL ~ file: Forms.js ~ line 20 ~ exports.restoreForms= ~ error", error)
+        }
+    }
+
+    console.log(restoredFormsUrls)
+    console.log(JSON.stringify(restoredFormsUrls));
+}
+
 exports.restoreForms = async (projectId, formType, formTemplateId, unitIds,) => {
     // if (_.isNil(FORM_TYPES[formType]) || _.isEmpty(unitIds) || !formTemplateId)
     //     return;
 
-    projectId = projectId || '-Lnq-7UZueO9qfOAnMpi';
-    formTemplateId = formTemplateId || '-MFVDQw_WXlnMGwHh8h7';
-    formType = formType || 'general';
-    unitIds = ["-MFdqEztg6vyh5F8VcHD", "-MFdqEzuUWzsQsNXKCau", "-MFdqEzzx9ijK4GYXMqb", "-MFdqF-0XIhpGnIobZYi", "-MFdqF-5zwndkXjgA0T4", "-MFdqF-8dPbT57LeAPME"];
+    if (!projectId || !formType || !formTemplateId || !unitIds)
+        return;
 
     let unitIdsMap = _.mapKeys(unitIds);
     let formsToRestores = {};
@@ -40,7 +94,7 @@ exports.restoreForms = async (projectId, formType, formTemplateId, unitIds,) => 
                 const unitId = location ? location.unitId : null;
                 let body = { formType, projectId };
 
-                if (unitId && unitIdsMap[unitId] && signatures && form.formTemplateId === formTemplateId && _.values(signatures).length) {
+                if (unitId && unitIdsMap[unitId] && form.formTemplateId === formTemplateId) {
                     if (!formsToRestores[unitId])
                         formsToRestores[unitId] = { ...body, formId: id, numberOfSignatures: values(signatures).length };
                     else {
@@ -81,6 +135,22 @@ exports.restoreForms = async (projectId, formType, formTemplateId, unitIds,) => 
 
     } catch (error) {
         console.log("TCL ~ file: Forms.js ~ line 20 ~ exports.restoreForms= ~ error", error)
+    }
+}
+
+exports.regenerateForms = async (projectId, formType) => {
+    let formsToRegenerate = await utils.axios(null, { url: `${apiServer}/v1/forms?projectId=${projectId}&formType=safety`, method: 'GET' });
+    formType = 'safety';
+
+    for (let formId in formsToRegenerate) {
+        let currForm = formsToRegenerate[formId];
+
+        try {
+            if (currForm.id)
+                await utils.axios(null, { method: 'POST', url: `${puppeteerServerDev}/pdf`, data: { projectId, formType, formId: currForm.id } });
+        } catch (error) {
+            console.log('error', { error });
+        }
     }
 }
 

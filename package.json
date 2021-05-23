@@ -17,9 +17,9 @@
     "node-hikvision-api": "0.0.2",
     "nodemon": "^2.0.5",
     "urllib": "^2.36.1",
+    "uuid": "^3.3.2",
     "xml2js": "^0.4.23"
   },
-  "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
