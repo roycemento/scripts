@@ -1,5 +1,5 @@
 const axios = require('axios');
-const { values } = require('lodash');
+const { values, method } = require('lodash');
 const _ = require('lodash');
 const utils = require('./Utils');
 const apiServer = 'http://localhost:8080';
@@ -80,11 +80,6 @@ exports.restoreForms = async (projectId, formType, formTemplateId, unitIds,) => 
 
     if (!projectId || !formType || !formTemplateId || !unitIds)
         return;
-<<<<<<< HEAD
-
-=======
-    
->>>>>>> 370654b9cdb80b822c5d266279cecfe958acbd81
     let unitIdsMap = _.mapKeys(unitIds);
     let formsToRestores = {};
     let restoredFormsUrls = [];
@@ -158,129 +153,114 @@ exports.regenerateForms = async (projectId, formType) => {
     }
 }
 
-exports.syncFormsToNewPropertyInstance = async (projectId, formType, formTemplateId, subjectName, lang) => {
+
+exports.syncFormsToNewPropertyInstance = async (projectId, universalId, subjectName, lang) => {
     lang = lang || 'he';
 
     try {
-        let [propertiesInstances, posts, template, propertyTypes] = await Promise.all([
-            axios.get(`${apiServer}/v1/propertiesInstances?subjectName=${subjectName}&projectId=${projectId}`),
-            axios.get(`${apiServer}/v1/posts?projectId=${projectId}`),
-            axios.get(`${apiServer}/v1/configurations?scope=projects&scopeId=${projectId}&ids=["${formTemplateId}"]&confSubj=forms`),
-            axios.get(`${apiServer}/v1/properties?projectId=${projectId}&subjectName=${subjectName}`)
-        ]);
+        let projectMergedTemplates = await utils.axios(null, { url: `${apiServer}/v1/services/templates/getMerged?scope=projects&scopeId=${projectId}&templateSubject=configurations`, method: 'GET' });
+        let projectForms = _.get(projectMergedTemplates, ['configurations', 'forms'], {});
+        let template;
 
-        propertiesInstances = propertiesInstances.data;
-        posts = posts.data;
-        template = template.data;
-        propertyTypes = _.get(propertyTypes, ["data", "properties"])
-
-        let propInstanceMapByPdfURI = {};
-        let building = { exist: {}, notExist: {} };
-
-        _.values(propertiesInstances)
-            .forEach(inst => {
-                let data = _.head(_.values(inst.data)) || {};
-
-                if (data.type === 'pdf' && data.uri)
-                    _.set(propInstanceMapByPdfURI, [data.uri], true);
-            });
+        _.forIn(projectForms, (form, formId) => {
+            if (_.get(form, ['universalIds', universalId]))
+                template = form;
+        });
 
         if (!template)
-            throw new Error();
+            return;
 
-        template = _.get(template, [formTemplateId]);
-
-        let { universalIds, title } = template;
-
-        title = title[lang];
+        let title = _.get(template, ['title', lang]);
         title = _.head(title.split('-')).toString().trim();
 
-        let universalId = _.head(_.values(universalIds));
+        let [propertiesInstances, posts, propertyTypes] = await Promise.all([
+            utils.axios(null, { url: `${apiServer}/v1/propertiesInstances?subjectName=${subjectName}&projectId=${projectId}`, method: 'GET' }),
+            utils.axios(null, { url: `${apiServer}/v1/posts?projectId=${projectId}`, method: 'GET' }),
+            utils.axios(null, { url: `${apiServer}/v1/properties?projectId=${projectId}&subjectName=${subjectName}`, method: 'GET' })
+        ]);
+
+        propertyTypes = _.get(propertyTypes, ["properties"])
+
+        let propInstanceMapByPdfURI = {};
         let requestedPropType = _.values(propertyTypes).find(prop => prop.universalId === universalId);
         let propType = _.get(requestedPropType, ['type']);
         let propId = _.get(requestedPropType, ['id']);
-        let finalForms = {};
 
-        _.values(posts)
-            .filter(post => post && post.updatedTS && post.id && post.attachments)
-            .filter(post => {
-                let pdf = _.head(_.values(post.attachments)).uri;
+        let dateProperty = {};
 
-                if (_.get(propInstanceMapByPdfURI, [pdf])) {
-                    let count = _.get(building, ['exist', _.get(post, 'location.building.id')]) || 1;
-                    _.set(building, ['exist', _.get(post, 'location.building.id')], count + 1);
-                    return false;
-                } else {
-                    let count = _.get(building, ['notExist', _.get(post, 'location.building.id')]) || 1;
-                    _.set(building, ['notExist', _.get(post, 'location.building.id')], count + 1);
-                    return true;
-                }
+        _.forIn(propertyTypes, (val, key) => {
+            if (val && val["universalId"] === "unitApproval_preDelivery_date") {
+                dateProperty = {
+                    propType: 'Date',
+                    propId: key,
+                };
+            }
+        });
 
-            })
-            .filter(post => post.title.includes(title))
-            .sort((a, b) => b.updatedTS - a.updatedTS)
-            .forEach(post => {
+        _.forIn(propertiesInstances, (val, key) => {
+
+            let { type, uri } = _.head(_.values(val.data)) || {};
+
+            if (type === 'pdf' && uri)
+                _.set(propInstanceMapByPdfURI, [uri], true);
+        });
+
+        let dbUpdates = {};
+        let count1 = 0;
+        let count2 = 0;
+
+        _.forIn(posts, (post, postId) => {
+            if (post && post.title && post.title.includes(title) && post.updatedTS && post.id && post.attachments) {
+                const { attachments, createdAt } = post;
+                let pdf = _.head(_.values(attachments))
+                let uri = _.get(pdf, ["uri"], null);
+
                 let unitId = _.get(post, ["location", "unit", "id"]);
                 let floorId = _.get(post, ["location", "floor", "id"]);
                 let buildingId = _.get(post, ["location", "building", "id"]);
 
-                if (unitId && floorId && buildingId)
-                    _.set(finalForms, [buildingId + floorId + unitId], post);
-            });
+                let datePropId = utils.getUniqKey(`properties/instances/projects/${projectId}/${subjectName}`);
+                let currentDatePropData = { ...dateProperty, data: createdAt, updatedTS: Date.now(), parentId: unitId, id: datePropId };
+                _.set(dbUpdates, `properties/instances/projects/${projectId}/${subjectName}/${utils.getUniqKey(`properties/instances/projects/${projectId}/${subjectName}`)}`, currentDatePropData);
 
-        let batches = _.chunk(_.values(finalForms), 1);
+                if (_.get(propInstanceMapByPdfURI, [uri])) {
+                    count1++;
+                    return;
+                }
 
-        for (let batch of batches) {
+                let id = utils.getUniqKey('properties/instances/projects' + projectId + subjectName);
 
-            await Promise.all(
-                batch.map(
-                    async (form) => {
-                        const { attachments } = form;
-                        let pdf = _.head(_.values(attachments))
-                        let uri = _.get(pdf, ["uri"], null);
+                if (unitId && floorId && buildingId) {
+                    let data = {
+                        data: [{
+                            contentTypeId: "doc",
+                            type: "pdf",
+                            updatedTS: Date.now(),
+                            uri: uri
+                        }],
+                        updatedTS: Date.now(),
+                        parentId: unitId,
+                        propId,
+                        propType,
+                        id
+                    };
+                    count2++;
 
-                        let unitId = _.get(form, ["location", "unit", "id"]);
-                        let floorId = _.get(form, ["location", "floor", "id"]);
-                        let buildingId = _.get(form, ["location", "building", "id"]);
+                    _.set(dbUpdates, `properties/instances/projects/${projectId}/${subjectName}/${id}`, data);
+                    _.set(dbUpdates, `properties/instances/projects/${projectId}/${subjectName}/${datePropId}`, currentDatePropData);
+                }
+            }
+        });
 
-                        if (!buildingId || !floorId || !unitId)
-                            return;
+        // await utils.createObjOnFireBase(dbUpdates);
 
-                        const parentId = buildingId + floorId + unitId;
+        debugger;
 
-                        let propInstanceId = utils.getUniqKey('properties/instances/projects' + projectId + subjectName);
-
-                        if (parentId && propInstanceId && uri) {
-                            let data = {
-                                data: [{
-                                    contentTypeId: "doc",
-                                    type: "pdf",
-                                    updatedTS: Date.now(),
-                                    uri: uri
-                                }],
-                                updatedTS: Date.now(),
-                                parentId,
-                                propId,
-                                propType,
-                                id: propInstanceId,
-                            };
-
-                            let dbUpdates = {};
-                            _.set(dbUpdates, `properties/instances/projects/${projectId}/${subjectName}/${propInstanceId}`, data);
-
-                            await utils.createObjOnFireBase(dbUpdates);
-                        }
-                    })
-            );
-
-            await utils.threadSleep(3000);
-        }
     }
     catch (error) {
         console.log("TCL ~ file: Forms.js ", error)
     }
 }
-
 
 exports.fix = async (projectId, formType, formTemplateId, subjectName, lang) => {
     try {
