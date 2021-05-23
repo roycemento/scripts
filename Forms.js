@@ -80,7 +80,11 @@ exports.restoreForms = async (projectId, formType, formTemplateId, unitIds,) => 
 
     if (!projectId || !formType || !formTemplateId || !unitIds)
         return;
+<<<<<<< HEAD
 
+=======
+    
+>>>>>>> 370654b9cdb80b822c5d266279cecfe958acbd81
     let unitIdsMap = _.mapKeys(unitIds);
     let formsToRestores = {};
     let restoredFormsUrls = [];
