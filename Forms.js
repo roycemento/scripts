@@ -254,8 +254,6 @@ exports.syncFormsToNewPropertyInstance = async (projectId, universalId, subjectN
 
         // await utils.createObjOnFireBase(dbUpdates);
 
-        debugger;
-
     }
     catch (error) {
         console.log("TCL ~ file: Forms.js ", error)
