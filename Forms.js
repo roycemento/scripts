@@ -154,7 +154,7 @@ exports.regenerateForms = async (projectId, formType) => {
 }
 
 
-exports.syncFormsToNewPropertyInstance = async (projectId, universalId, subjectName, lang) => {
+exports.syncFormsToNewPropertyInstance = async (projectId, universalId, subjectName, lang, dateUniversalId) => {
     lang = lang || 'he';
 
     try {
@@ -170,8 +170,8 @@ exports.syncFormsToNewPropertyInstance = async (projectId, universalId, subjectN
         if (!template)
             return;
 
-        let title = _.get(template, ['title', lang]);
-        title = _.head(title.split('-')).toString().trim();
+        let title = _.get(template, ['title', lang], null);
+        title = title ? _.head(title.split('-')).toString().trim() : '';
 
         let [propertiesInstances, posts, propertyTypes] = await Promise.all([
             utils.axios(null, { url: `${apiServer}/v1/propertiesInstances?subjectName=${subjectName}&projectId=${projectId}`, method: 'GET' }),
@@ -189,7 +189,7 @@ exports.syncFormsToNewPropertyInstance = async (projectId, universalId, subjectN
         let dateProperty = {};
 
         _.forIn(propertyTypes, (val, key) => {
-            if (val && val["universalId"] === "unitApproval_preDelivery_date") {
+            if (val && val["universalId"] && val["universalId"] === dateUniversalId) {
                 dateProperty = {
                     propType: 'Date',
                     propId: key,
@@ -198,7 +198,6 @@ exports.syncFormsToNewPropertyInstance = async (projectId, universalId, subjectN
         });
 
         _.forIn(propertiesInstances, (val, key) => {
-
             let { type, uri } = _.head(_.values(val.data)) || {};
 
             if (type === 'pdf' && uri)
@@ -206,8 +205,6 @@ exports.syncFormsToNewPropertyInstance = async (projectId, universalId, subjectN
         });
 
         let dbUpdates = {};
-        let count1 = 0;
-        let count2 = 0;
 
         _.forIn(posts, (post, postId) => {
             if (post && post.title && post.title.includes(title) && post.updatedTS && post.id && post.attachments) {
@@ -221,12 +218,9 @@ exports.syncFormsToNewPropertyInstance = async (projectId, universalId, subjectN
 
                 let datePropId = utils.getUniqKey(`properties/instances/projects/${projectId}/${subjectName}`);
                 let currentDatePropData = { ...dateProperty, data: createdAt, updatedTS: Date.now(), parentId: unitId, id: datePropId };
-                _.set(dbUpdates, `properties/instances/projects/${projectId}/${subjectName}/${utils.getUniqKey(`properties/instances/projects/${projectId}/${subjectName}`)}`, currentDatePropData);
 
-                if (_.get(propInstanceMapByPdfURI, [uri])) {
-                    count1++;
+                if (_.get(propInstanceMapByPdfURI, [uri]))
                     return;
-                }
 
                 let id = utils.getUniqKey('properties/instances/projects' + projectId + subjectName);
 
@@ -251,9 +245,11 @@ exports.syncFormsToNewPropertyInstance = async (projectId, universalId, subjectN
                 }
             }
         });
+        debugger;
 
-        // await utils.createObjOnFireBase(dbUpdates);
+        await utils.createObjOnFireBase(dbUpdates);
 
+        debugger;
     }
     catch (error) {
         console.log("TCL ~ file: Forms.js ", error)

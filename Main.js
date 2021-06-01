@@ -10,5 +10,4 @@ const axios = require('axios');
 const apiServerDev = 'http://localhost:8080';
 const apiServerProd = 'https://api-dot-planme-1383.appspot.com';
 
-
-// Forms.syncFormsToNewPropertyInstance('-MDoc1KWXQHlQf_f_cPc', 'unitApproval_preDelivery', 'locationsInfo');
+Forms.syncFormsToNewPropertyInstance('-LHP_8cU0nhx6-PNNXhp', 'unitApproval', 'locationsInfo', null, 'unitApproval_date');
