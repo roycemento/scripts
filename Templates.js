@@ -16,7 +16,8 @@ exports.addAppendix = async (projectId, formId, images) => {
     let path = `templates/configurations/projects/${projectId}/forms/${formId}/appendix/images`;
 
     images.forEach((val, index) => _.set(dbUpdates, [`${path}/appendix_${index + 1}`], { uri: val, id: `appendix_${index + 1}` }));
-    await utils.createObjOnFireBase(dbUpdates);
+
+    await utils.firebaseUpdate(dbUpdates);
     await axios({ url: `${apiServerDev}/v1/services/templates/merge?scope=projects&scopeId=${projectId}&templateSubject=configurations`, method: 'GET' });
 }
 

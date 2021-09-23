@@ -38,7 +38,7 @@ exports.getUniqKey = (path) => {
     return firebaseDataBase.ref(path).push().key;
 }
 
-exports.createObjOnFireBase = async (dbUpdates) => {
+exports.firebaseUpdate = async (dbUpdates) => {
     await firebaseDataBase.ref().update(dbUpdates);
 }
 

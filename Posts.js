@@ -2,6 +2,7 @@ const axios = require('axios');
 const _ = require('lodash');
 const apiServer = 'http://localhost:8080';
 const Trades = require('./trades.json');
+const utils = require('./Utils');
 
 const RESOURCES = {
     GET_PROJECTS_BY_COMPANY: `${apiServer}/v1/projects`,
@@ -57,27 +58,23 @@ exports.changeTaskAssign = async (projectId, trade, assignTo) => {
     const posts = (await axios.get(RESOURCES.GET_POSTS_BY_PROJECT + `?projectId=${projectId}`)).data;
 
     let isTradeExist = _.get(Trades, [trade]);
+    let dbUpdates = {};
+
 
     if (isTradeExist && assignTo) {
         let postsByTrade = _.values(posts).filter(post => _.get(post, ["trade", "id"]) === trade);
 
         for (let post of postsByTrade) {
-            if (post && post.id) {
-                let updatedAssignTo = { id: assignTo };
-
-                const data = { ...post, assignTo: updatedAssignTo };
-
-                try {
-                    await axios.patch(RESOURCES.PATCH_POST + `/${post.id}` + `?projectId=${projectId}`, data);
-                } catch (error) {
-                    console.log("TCL ~ file: Posts.js ~ line 44 ~ removeCompanyTagFromAllPosts ~ error", error)
-                }
-            }
+            if (post && post.id && post.assignTo.id !== assignTo)
+                _.set(dbUpdates, `posts/${projectId}/${post.id}/assignTo/id`, assignTo);
         }
 
-        console.log("TCL ~ file: Posts.js ~ line 57 ~ ChangeTaskAssign ~ posts", posts);
+        try {
+            await utils.updatesOnFirebaseDb(dbUpdates);
+        } catch (error) {
+            console.log('error', error);
+        }
     }
-
 }
 
 exports.fixEzraBug = async (projectId1, projectId2) => {

@@ -1,6 +1,6 @@
 const axios = require('axios');
 const _ = require('lodash');
-
+const utils = require('./Utils');
 const apiServer = 'http://localhost:8080';
 
 const RESOURCES = {
@@ -20,6 +20,41 @@ const sleep = function (delay) {
             resolve(true);
         }, delay);
     });
+}
+
+const projectsMap = {
+    "-MAuS5IW7OgXn-Os9Ewm": "9000",
+    "-LxQvZ4EoTtj_Iooo1dM": "9001",
+    "-LjjY-E27b5c1oDCC_As": "9002",
+    "-MPj-FbhXK-_vvOn0ntK": "9000",
+    "-MQ6EUuczNXd54haAwYQ": "9001",
+    "-MQR1ViVk7lMBVkUzU_K": "9002",
+    "-MWxCtCrEAFJ16fzsXoF": "9000",
+    "-MPj-l1No17zIk437Tih": "9001",
+    "-MYj_QQRFSEjnrZTb-W4": "9002",
+    "-MUrNi-sgSSxs0CsVG7Z": "9000",
+    "-Me4NNN_PjsE8TporaFq": "9001"
+};
+
+exports.syncProjects = async () => {
+    await Promise.all(
+        _.keys(projectsMap)
+            .map(async projectId => {
+                const port = _.get(projectsMap, [projectId], 8080);
+
+                if (port !== "9000")
+                    return;
+
+                const host = `http://localhost:${port}`;
+
+                try {
+                    await utils.axios(null, { url: `${host}/v1/siteControl/services/employees/sync?projectId=${projectId}&forceSync=true`, method: 'POST' });
+                } catch (error) {
+                    debugger;
+                    console.log(error);
+                }
+            })
+    );
 }
 
 exports.cleanCameras = async (projectId) => {
